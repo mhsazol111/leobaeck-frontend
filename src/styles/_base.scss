@@ -1,0 +1,129 @@
+//------------------------------------------------------------base styles
+:root {
+	@include bp($point_2 + 1, min) {
+		--full-screen: 100vh;
+	}
+
+	@include bp($point_2) {
+		--full-screen: calc(var(--vh, 1vh) * 100);
+	}
+}
+
+html {
+	height: 100%;
+	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+
+	@media (min-width: $point_4) and (max-width: $point_3) {
+		font-size: 10px;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: calc(100vh / 768 * 8);
+	}
+}
+
+body {
+	position: relative;
+
+	display: flex;
+	height: 100%;
+
+	font-size: $font_size_base;
+	color: $color_text_base;
+
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background: $body_bg;
+
+	transition: background-color .3s;
+
+	@supports (display: grid) {
+		display: block;
+	}
+
+	&.popup_open,
+	&.menu_open {
+		overflow: hidden;
+	}
+
+	// &.loaded_mod {
+	// 	opacity: 1 !important;
+	// }
+
+}
+
+.root_w {
+	height: 100%;
+}
+
+.wrapper {
+	position: relative;
+
+	width: 100%;
+	//display: flex;
+	//flex-direction: column;
+	min-height: 100%;
+	height: auto !important;
+
+	overflow-x: hidden;
+}
+
+.base {
+	width: 100%;
+	position: relative;
+	padding: $height_header 0 0;
+	flex: 1 0 auto;
+
+	body.landing_mod & {
+		padding-top: 0;
+	}
+
+	@include bp($point_2 + 1, min) {
+		min-height: calc(100vh - #{$height_footer});
+	}
+
+	@include bp($point_3) {
+		padding-top: $height_header_mob;
+	}
+}
+
+@include bp($point_2 + 1, min) {
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ddd;
+}
+}
+a {
+	text-decoration: none;
+	color: $color_link_base;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+
+}
+
+.elements_list {
+	padding: 3rem;
+}
+
+//------------------------------------------------------------base styles###

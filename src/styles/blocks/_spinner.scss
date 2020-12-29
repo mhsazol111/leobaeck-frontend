@@ -1,0 +1,56 @@
+//---------------------------------------------Spinner
+.spinner_wrap {
+	@extend %global_flex_block_row_wrap_center_center;
+
+  height: 5rem;
+  width: 100%;
+	
+	text-align: center;
+	line-height: 5rem;
+
+	&.limit_col_mod {
+		margin-left: auto;
+		width: calc(100%/3 * 2);
+	}
+
+	&.v1_mod {
+		height: 100%;
+	}
+
+}
+
+.spinner {
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+
+	border: .25em solid $black;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: spinner-border .75s linear infinite;
+
+	&.dark_mod {
+		border-color: $black;
+		border-right-color: transparent;
+	}
+
+}
+
+@keyframes spinner-border {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+//---------------------------------------------Spinner###

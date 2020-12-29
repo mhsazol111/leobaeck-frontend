@@ -1,0 +1,160 @@
+.map {
+	height: 100rem;
+	width: 100%;
+
+	@include bp($point_2) {
+		height: calc( var(--full-screen) - #{$height_header_mob});
+	}
+}
+
+.controls.zoom-control {
+	right: 2rem !important;
+	bottom: 2rem !important;
+}
+
+.zoom-control-btn {
+	display: block;
+	width: 4.8rem;
+	height: 4.8rem;
+
+	font-size: 2.6rem;
+	color: $white;
+
+	background-color: $blue;
+	border-radius: 50%;
+
+	transition: all .3s;
+
+	cursor: pointer;
+
+	&:hover {
+		background-color: $black;
+	}
+
+	& + & {
+		margin-top: 1.4rem;
+	}
+}
+
+// custom markers
+
+.map_pointer_wrap {
+	width: 1.6rem;
+	height: 1.6rem;
+
+	color: $white ;
+	cursor: pointer;
+
+	transition: all .3s;
+
+	&.cluster_mod {
+		width: 3.2rem;
+		height: 3.2rem;
+	}
+
+	&:hover, &:focus {
+		color: $blue;
+	}
+}
+
+.map_pointer_hover {
+	position: absolute;
+	left: 100%;
+	bottom: calc(100% + 1rem);
+
+	padding: 1.6rem;
+	width: 25rem;
+
+	background: url('../../i/marker_hover.svg') no-repeat center center;
+	background-size: 100% 100%;
+
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: $blue;
+
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s;
+
+	z-index: 10;
+
+	.map_pointer_wrap:hover &,
+	.map_pointer_wrap:focus & {
+		opacity: 1;
+		pointer-events: initial;
+	}
+}
+
+.map_pointer {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.gm-fullscreen-control {
+	display: none !important;
+}
+
+.gm-control-active[aria-label="Zoom in"],
+.gm-control-active[aria-label="Zoom out"] {
+	position: relative;
+
+	border-radius: 50% !important;
+	background-color: $blue !important;
+
+	transition:  all .3s !important;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		width: 2.4rem;
+		height: .3rem;
+		margin-left: -1.2rem;
+		margin-top: -.15rem;
+
+		background-color: $white;
+	}
+
+	img {
+		display: none !important;
+	}
+
+	&:hover {
+		background-color: darken($blue, 15%) !important;
+	}
+}
+
+.gm-control-active[aria-label="Zoom in"] {
+	margin-bottom: 1.4rem !important;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		height: 2.4rem;
+		width: .3rem;
+		margin-top: -1.2rem;
+		margin-left: -.15rem;
+
+		background-color: $white;
+	}
+
+	& + div {
+		display: none !important;
+	}
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom {
+	bottom: 14rem !important;
+	right: 6rem !important;
+	.gmnoprint > div {
+		background-color: transparent !important;
+		box-shadow: none !important;
+	}
+}

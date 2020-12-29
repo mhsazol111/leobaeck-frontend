@@ -1,0 +1,81 @@
+//---------------------------------------------fonts
+$font_path: "../../fonts/";
+$font_1: "Aktiv Grotesk", sans-serif;
+$font_size_base: 1.6rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+body { 
+	--text: #000;
+	--bg: #f5f5f5;
+	--hover: #0038b9;
+}
+
+body.dark_mod {
+	--text: #fff;
+	--bg: #212121;
+	--hover: #fff;
+}
+
+$white: #fff;
+
+$black: #000;
+$black_2: #1a1818;
+$black_3: #212121;
+
+$gray: #707070;
+$gray_2: #9f9f9f;
+$gray_3: #ededed;
+$gray_4:#f5f5f5;
+
+$blue: #0038b9;
+$red: #ff7676;
+
+$color_text_base: $black;
+$color_link_base:#4aa3df;
+$body_bg: var(--bg);
+//---------------------------------------------colors###
+
+//---------------------------------------------z-index
+$z-index: (
+	popap : 9999,
+	header : 100,
+	footer : 100
+);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$height_footer: 60rem;
+$height_header: 15.6rem;
+$height_header_mob: 8rem;
+$page_width: 163.8rem;
+$page_width_2: 149.6rem;
+
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_indent: 2rem;
+$gl_radius:.5rem;
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 1023px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points
+
+//---------------------------------------------forms
+$input_height: 4rem;
+$input_offset: 0 2rem;
+$input_font_size: $font_size_base;
+$input_border_color: #ccc;
+$input_border_color_active: $black;
+$input_placeholder_color: $black;
+$input_text_color: $black;
+$input_radius: $gl_radius;
+//---------------------------------------------forms###

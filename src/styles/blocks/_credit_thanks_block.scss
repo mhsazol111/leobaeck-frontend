@@ -1,0 +1,87 @@
+.credit_thanks_list {
+  width: 100%;
+}
+
+.credit_thanks_item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 7.8rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.credit_thanks_item_in {
+  @include bp($point_4, min) {
+    width: 50%;
+
+    .credit_thanks_item:nth-child(even) & {
+      margin-left: auto;
+    }
+  }
+
+  @include bp($point_4 - 1) {
+    width: 100%;
+  }
+}
+
+.credit_thanks_head {
+  width: 100%;
+  padding-bottom: 2rem;
+
+  border-bottom: 1px solid #030303;
+
+  @include bp($point_2, min) {
+    margin-bottom: 6rem;
+  }
+
+  @include bp($point_3) {
+    margin-bottom: 3rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.credit_thanks_head_title {
+  width: 100%;
+
+  color: $black;
+  font-family: $font_1;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.credit_thanks_inner_list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.credit_thanks_inner_item {
+  width: 100%;
+
+  color: $black;
+  font-family: $font_1;
+  font-weight: 500;
+  line-height: 1.29;
+
+  @include bp($point_2, min) {
+    margin-bottom: 4rem;
+    font-size: 3.5rem;
+  }
+
+  @include bp($point_3) {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

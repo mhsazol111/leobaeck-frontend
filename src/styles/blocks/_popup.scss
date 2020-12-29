@@ -1,0 +1,462 @@
+.popup-enter {
+	opacity: 0;
+}
+
+.popup-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-out;
+}
+
+.popup-exit-active {
+	opacity: 0;
+	transition: opacity 350ms ease-out;
+}
+
+.popup {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100vh;
+	padding: 2rem $gl_indent;
+
+	z-index: 1000;
+
+	// opacity: 0;
+	// pointer-events: none;
+
+	// transition: all .3s;
+
+	&.side_mod {
+		padding: 0;
+	}
+
+	&.landing_mod {
+		padding: 0;
+
+		background-color: $body_bg;
+	}
+
+	// &.active_mod,
+	// &.map_mod {
+	// 	opacity: 1;
+	// 	pointer-events: initial;
+	// }
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: rgba($black, .6);
+
+	z-index: -1;
+}
+
+.popup_in {
+	position: relative;
+
+	margin: auto;
+	padding: 10rem 2rem 10rem;
+	width: 122rem;
+	max-width: 100%;
+	max-height: 100%;
+
+	background-color: $blue;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+	color: $white;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	&.v2_mod {
+		width: 66.6rem;
+	}
+
+	&.v3_mod {
+		max-width: 80.2rem;
+	}
+
+	&.v4_mod {
+		max-width: 108rem;
+	}
+
+	&.side_mod {
+		margin: 0 0 0 auto;
+		height: 100%;
+		width: 80.4rem;
+		max-width: 100%;
+		padding: 10.6rem 0;
+
+		background-color: $white;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 5rem;
+			left: 50%;
+
+			width: 2.2rem;
+			height: 1.2rem;
+			margin-left: -1.1rem;
+
+			background:url('./../../i/scroll_down.svg') no-repeat center center;
+			background-size: contain;
+		}
+	}
+}
+
+.popup_content {
+	max-width: 66.4rem;
+	margin: 0 auto;
+
+	&.v2_mod {
+		max-width: 38.8rem;
+	}
+
+	&.v3_mod {
+		max-width: 94rem;
+	}
+
+	&.v4_mod {
+		max-width: 54rem;
+	}
+
+	.popup.side_mod & {
+		height: 100%;
+		width: 100%;
+		max-width: 100%;
+		padding: 0 14rem;
+		overflow-y: auto;
+		padding-bottom: 7rem;
+
+		-webkit-mask-image: linear-gradient(to top, transparent 0%, black 10rem);
+		mask-image: linear-gradient(to top, transparent 0%, black 10rem);
+
+		@include bp($point_4 - 1) {
+			padding: 0 2rem;
+		}
+	}
+}
+
+.popup_close {
+	position: absolute;
+	top: 3.4rem;
+	right: 3rem;
+
+	width: 2.6rem;
+	height: 2.6rem;
+
+	color: $white;
+	transition: color .3s;
+
+	cursor: pointer;
+
+	&.v2_mod {
+		right: auto;
+		left: 4.4rem;
+		top: 4.4rem;
+
+		color: $gray_2;
+	}
+
+	&:hover, &:focus {
+		color: $red;
+	}
+}
+
+.popup_warning {
+	margin-bottom: 3rem;
+
+	font-size: 1.2rem;
+	line-height: 1.9;
+	color: $red;
+}
+
+.popup_info {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: $white;
+
+	a {
+		position: relative;
+		display: inline-flex;
+		margin-left: .4rem;
+
+		color: $white;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: calc(100% + .4rem);
+			left: 0;
+
+			height: 1px;
+			width: 100%;
+
+			background-color: $white;
+		}
+
+		&:hover, &:focus {
+			text-decoration: none;
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+
+.popup_text {
+	margin-bottom: 3.6rem;
+
+	font-size: 2rem;
+
+	a {
+		display: inline-flex;
+		margin-left: .8rem;
+
+		color: $white;
+		font-weight: 700;
+	}
+
+	&.offset_mod {
+		margin-bottom: 7rem;
+	}
+
+	&.sm_mod {
+		margin-bottom: 1.4rem;
+
+		font-size: 1.2rem;
+		line-height: 1.9;
+	}
+
+	&.text_mod {
+		text-transform: uppercase;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 1.6rem;
+	}
+}
+
+.popup_list {
+	margin-bottom: 4rem;
+}
+
+.popup_list_item {
+	position: relative;
+	padding-left: 2rem;
+
+	font-size: 2rem;
+	line-height: 1.6;
+
+	& + & {
+		margin-top: 1rem;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 1rem;
+		left: 0;
+
+		width: .6rem;
+		height: .6rem;
+
+		background-color: $white;
+		border-radius: 50%;
+	}
+}
+
+.popup_bottom {
+	padding-top: 4.8rem;
+
+	border-top: 1px solid $white;
+}
+
+// calendar
+
+.popup_link {
+	display: block;
+
+	font-size: 3.5rem;
+	font-weight: 500;
+	color: $white;
+	text-align: center;
+
+	& + & {
+		margin-top: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 3rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2.4rem;
+	}
+}
+
+// popup forms
+
+.popup_cols {
+	@extend %global_flex_block_row_wrap_flex-start;
+		
+	margin-right: -8.4rem;
+
+	@include bp($point_4 - 1) {
+		margin-right: 0;
+	}
+}
+
+.popup_col {
+	padding-right: 8.4rem;
+
+	&.v1_mod {
+		width: 54%;
+
+
+		@include bp($point_4 - 1) {
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+
+	&.v2_mod {
+		width: 46%;
+		padding-top: 2.8rem;
+
+		@include bp($point_4 - 1) {
+			width: 100%;
+			padding-top: 0;
+		}
+	}
+
+
+}
+
+.popup_form {
+	margin-bottom: 3.2rem;
+}
+
+.form_controller {
+	padding-bottom: 3rem;
+}
+
+.popup_checkbox_wrap {
+	margin-bottom: 6rem;
+}
+
+.popup_privacy {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+
+	font-size: 1.2rem;
+	color: $white;
+
+	transition: color .3s;
+
+	&:hover, &:focus {
+		color: $red;
+		text-decoration: none;
+	}
+}
+
+// panel
+
+.panel_slider {
+	height: 100%;
+}
+
+.panel_img_wrap {
+	margin-top: 4rem;
+	margin-bottom: 3.8rem;
+}
+
+.panel_img_wrap_in {
+	display: block;
+	width: 100%;
+	height: 32.2rem;
+
+	&.lg_mod {
+		height: 54.4rem;
+	}
+}
+
+.panel_img_caption {
+	margin-top: 4rem;
+
+	font-size: 1.6rem;
+	color: $gray_2;
+	line-height: 1.6;
+}
+
+.panel_img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+
+	&.historical_mod {
+		object-fit: cover;
+	}
+
+}
+
+.panel_item_buttons {
+	@extend %global_flex_block_row_wrap_space_between_center;
+}
+
+.panel_text {
+	margin-bottom: 3.6rem;
+
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: $black;
+}
+
+.contact_link_list {
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.contact_link_item {
+	width: 100%;
+}
+
+.contact_link {
+	@extend %transition_color;
+
+	text-decoration: none;
+
+	color: #000;
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 1.5;
+
+	&:focus, &:hover, &:active {
+		text-decoration: none;
+		color: $blue;
+	}
+}
+
+.popup_check_list {
+	margin-bottom: 8.4rem;
+}
+
+.popup_check_item {
+	& + & {
+		margin-top: 4rem;
+	}
+}

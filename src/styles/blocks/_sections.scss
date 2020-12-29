@@ -1,0 +1,568 @@
+//---------------------------------------------sections
+
+.preloader {
+	position: fixed;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $white;
+
+	z-index: 1000;
+	will-change: transform;
+	pointer-events: none;
+}
+
+.section {
+	position: relative;
+
+	width: 100%;
+
+	@include bp($point_2, min) {
+		padding: 10rem $gl_indent;
+	}
+
+	@include bp($point_3) {
+		padding: 6rem $gl_indent;
+	}
+
+	font-size: 1rem;
+
+	&.landing_mod {
+		@extend %global_flex_block_row_wrap_center_center;
+
+		min-height: 100vh;
+	}
+
+	&.hero_v1_mod {
+		padding-top: 2.2rem;
+	}
+
+	&.no_top_offset_mod {
+		padding-top: 0;
+	}
+
+	&.no_bottom_offset_mod {
+		padding-bottom: 0;
+	}
+
+	&.no_offset_mod {
+		padding: 0;
+	}
+
+	&.map_mod {
+		// &:after {
+		// 	content: '';
+
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 15rem;
+
+		// 	background-image: linear-gradient(to bottom, var(--bg), transparent);
+		// }
+	}
+
+}
+
+.section_in {
+	max-width: $page_width;
+	width: 100%;
+	margin: 0 auto;
+
+	position: relative;
+
+	&.row_mod {
+		@extend %global_flex_block_row_wrap_flex-start;
+
+		margin-right: -17rem;
+	}
+
+	&.wrap_mod {
+		@extend %global_flex_block_row_wrap_flex-start_stretch;
+
+		max-width: $page_width_2;
+	}
+
+	&.row_v1_mod {
+		@extend %global_flex_block_row_wrap_flex-start_stretch;
+
+		@include bp($point_2, min) {
+			padding-right: 13.8rem;
+		}
+	}
+
+	&.flex_mod {
+		@extend %global_flex_block_row_wrap_center_center;
+	}
+
+	&.offset_mod {
+		margin-bottom: 4rem;
+	}
+
+	&.timeline_filter_mod {
+		padding: 4rem 0;
+		border-bottom: 1px solid $gray_2;
+		border-top: 1px solid $gray_2;
+	}
+
+}
+
+a.section_title {
+	display: block;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.section_title {
+	color: var(--text);
+	font-size: 6.5rem;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: -.163rem;
+	line-height: 1.15;
+
+	&.decor_mod {
+		padding-bottom: 3.8rem;
+
+		border-bottom: 3px solid $black;
+
+		@include bp($point_4 - 1) {
+			padding-bottom: 1rem;
+		}
+	}
+
+	&.decor_v2_mod {
+		padding-bottom: 3.2rem;
+
+		border-bottom: 1px solid $blue;
+	}
+
+	&.decor_v3_mod {
+		padding-bottom: 3.6rem;
+
+		border-bottom: 1px solid $gray_2;
+	}
+
+	&.size_v2_mod {
+		font-size: 3.5rem;
+		font-weight: 500;
+		line-height: 1.3;
+		letter-spacing: normal;
+
+		@include bp($point_3) {
+			font-size: 3rem;
+		}
+
+		@include bp($point_4 - 1) {
+			font-size: 2.6rem;
+		}
+	}
+
+	&.size_v3_mod {
+		font-size: 2rem;
+		letter-spacing: normal;
+	}
+
+	&.color_mod {
+		color: $white;
+	}
+
+	&.color_v2_mod {
+		color: $blue;
+	}
+
+
+	&.offset_mod {
+		margin-bottom: 9rem;
+
+		@include bp($point_3) {
+			margin-bottom: 6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 3.6rem;
+		}
+	}
+
+	&.offset_v2_mod {
+		margin-bottom: 4rem;
+	}
+
+	&.offset_v4_mod {
+		margin-bottom: 6rem;
+	}
+
+	&.offset_v5_mod {
+		margin-bottom: auto;
+	}
+
+	&.flex_mod {
+		@extend %global_flex_block_row_wrap_space_between_center;
+	}
+
+	&.limit_mod {
+		max-width: 66.4rem;
+		margin-right: auto;
+	}
+
+	&.limit_v2_mod {
+		max-width: 40rem;
+		margin-right: auto;
+	}
+
+	&.center_lvl_mod {
+		text-align: center;
+	}
+
+	@include bp($point_3) {
+		font-size: 5.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 3.6rem;
+	}
+}
+
+.section_descr {
+	color: $black;
+	font-family: $font_1;
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 1.5;
+
+	.types_information_item.v2_mod & {
+		font-size: 1.8rem;
+		line-height: 1.56;
+	}
+
+	p {
+		margin-bottom: 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+	a {
+		font-weight: 700;
+		text-decoration: underline;
+		color: inherit;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.size_mod {
+		font-size: 1.8rem;
+		line-height: 1.55;
+	}
+
+
+	&.offset_mod {
+		margin-bottom: 6.8rem;
+	}
+
+	&.offset_v2_mod {
+		margin-bottom: 9rem;
+	}
+
+	&.offset_v3_mod {
+		margin-bottom: 2rem;
+	}
+
+	&.offset_v4_mod {
+		margin-bottom: 4rem;
+	}
+
+	&.offset_top_mod {
+		padding-top: 6.2rem;
+	}
+
+	&.color_mod {
+		color: $white;
+	}
+
+	&.info_mod {
+		font-size: 1.6rem;
+		font-weight: 700;
+		color: $gray_2;
+	}
+
+	&.like_mod {
+		position: relative;
+
+		padding-right: 3.4rem;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&.preview_mod {
+		flex-shrink: 0;
+		margin-left: 1rem;
+	}
+
+	&.list_mod {
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	ul, li {
+		list-style: disc;
+	}
+
+	ul {
+		margin: 0 0 2rem 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.section_row {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	&.right_offset_mod {
+		@include bp($point_2, min) {
+			margin-right: -3.2rem;
+		}
+	}
+
+	&.right_offset_v2_mod {
+		@include bp($point_2, min) {
+			margin-right: -17rem;
+		}
+	}
+
+	&.right_offset_v3_mod {
+		@include bp($point_2, min) {
+			margin-right: -8.6rem;
+		}
+	}
+
+	&.offset_mod {
+		margin-bottom: 9rem;
+	}
+
+	&.offset_v2_mod {
+		margin-bottom: 5rem;
+	}
+
+	&.offset_v3_mod {
+		margin-bottom: 11.4rem;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+	}
+
+	&.left_offset_mod {
+		justify-content: flex-end;
+	}
+
+	&.visit_mod {
+		@include bp($point_2 + 1, min) {
+			flex-flow: nowrap;
+		}
+		@include bp($point_3) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	@include bp($point_3) {
+		flex-direction: column;
+		width: 100%;
+	}
+
+}
+
+.section_col_block {
+	margin-bottom: 3.8rem;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+}
+
+.section_col {
+
+	@include bp($point_2, min) {
+		.section_row.right_offset_mod & {
+			padding-right: 3.2rem;
+		}
+
+		.section_row.right_offset_v2_mod & {
+			@include bp($point_2, min) {
+				padding-right: 17rem;
+			}
+		}
+
+		&.col_2_mod {
+			width: 50%;
+		}
+
+		&.col_3_mod {
+			width: calc(100%/3);
+		}
+
+		&.col_4_mod {
+			width: calc(100%/3 * 2);
+		}
+
+		&.top_offset_mod {
+			padding-top: 14.4rem;
+		}
+
+		&.top_offset_v2_mod {
+			padding-top: 6.8rem;
+		}
+
+		&.up_event_descr_mod {
+			width: 70%;
+		}
+
+		&.up_event_btn_mod {
+			margin-top: auto;
+			width: 30%;
+		}
+
+		&.info_text_mod {
+			width: 45%;
+		}
+
+		&.info_img_mod {
+			width: 55%;
+		}
+
+		&.side_mod {
+			width: 38.6rem;
+			margin-right: 2rem;
+
+			flex: none;
+		}
+
+		&.content_mod {
+			width: 63%;
+			margin-left: auto;
+			// margin-left: 151px;
+		}
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+
+		&+& {
+			margin-top: 3.2rem;
+		}
+	}
+
+}
+
+.section_side {
+	width: 100%;
+	margin-left: auto;
+
+	&.left_mod {
+		margin-left: 0;
+	}
+
+	&.width_v1_mod {
+		max-width: 122rem;
+	}
+
+	&.width_v2_mod {
+		@include bp($point_2, min) {
+			max-width: 149.8rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	&.width_v3_mod {
+		@include bp($point_2, min) {
+			max-width: 94.2rem;
+		}
+	}
+
+	&.width_v4_mod {
+		@include bp($point_2, min) {
+			max-width: 80.4rem;
+		}
+	}
+
+	&.width_v5_mod {
+		max-width: 135.8rem;
+	}
+
+	&.width_v6_mod {
+		@include bp($point_2, min) {
+			max-width: 108rem;
+		}
+	}
+
+	&.bg_mod {
+		background-color: $blue;
+	}
+
+	&.top_decor_mod {
+		padding-top: 9rem;
+
+		border-top: 3px solid $black;
+	}
+
+	&.top_decor_v2_mod {
+		padding-top: 6rem;
+
+		border-top: 1px solid $gray;
+	}
+
+	&.offset_mod {
+		margin-bottom: 10rem;
+	}
+
+	&.indent_mod {
+		padding: 0 $gl_indent;
+	}
+}
+
+.section_img {
+	display: block;
+	width: 100%;
+
+	@include bp($point_4, min) {
+		height: 100%;
+	}
+
+	object-fit: cover;
+
+	&.contain_mod {
+		object-fit: contain;
+	}
+}
+
+.dashboard_hero_img {
+	width: 100%;
+	@include bp($point_2, min) {
+		margin-top: 6rem;
+		height: 65.8rem;
+	}
+
+	&.future_img_mod {
+		margin-top: 0;
+	}
+
+}

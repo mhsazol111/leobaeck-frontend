@@ -1,0 +1,168 @@
+//---------------------------------------------search_result
+.search_result_list_item {
+	position: relative;
+
+	@include bp($point_2, min) {
+		padding-right: 17rem;
+		padding-bottom: 7.4rem;
+		margin-bottom: 7.6rem;
+	}
+
+	&:after {
+		position: absolute;
+		right: 17rem;
+		bottom: 0;
+
+		height: 1px;
+		width: calc(100% - 17rem);
+
+		content: '';
+
+		background-color: $gray;
+	}
+
+	&:last-of-type {
+		&:after {
+			display: none;
+		}
+	}
+
+}
+
+.search_result {
+	position: relative;
+
+	display: block;
+	max-width: 126.6rem;
+
+	@include bp($point_2, min) {
+		// padding-left: 5.2rem;
+		padding-right: 17rem;
+	}
+
+	@include bp($point_3) {
+		// padding-left: 4rem;
+		margin-bottom: 6rem;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+}
+
+.search_result_icon {
+	display: none;
+
+	position: absolute;
+	top: .6rem;
+	left: 4px;
+
+	color: $blue;
+
+	&.v1_mod {
+		width: 1.8rem;
+		height: 2.4rem;
+	}
+
+	&.v2_mod {
+		width: 2.6rem;
+		height: 1.8rem;
+	}
+
+	&.v3_mod {
+		width: 2.4rem;
+		height: 2.2rem;
+	}
+
+}
+
+.search_result_title {
+	margin-bottom: 2.8rem;
+
+	color: $black;
+	font-family: $font_1;
+	font-size: 3.4rem;
+	font-weight: 500;
+
+	@include bp($point_3) {
+		font-size: 2.2rem;
+	}
+}
+
+.search_result_descr {
+	color: $black;
+	font-family: $font_1;
+	font-size: 2rem;
+	font-weight: 400;
+
+	@include bp($point_3) {
+		font-size: 1.6rem;
+	}
+}
+//---------------------------------------------search_result###
+
+
+.search_form_heading {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	@include bp($point_2, min) {
+		margin-bottom: 9rem;
+	}
+
+	@include bp($point_3) {
+		margin-bottom: 4rem;
+	}
+}
+
+.search_form_input {
+
+	@include bp($point_2, min) {
+		flex-grow: 1;
+		margin-right: 3.2rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+}
+
+.search_filters {
+	max-width: 108rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 12.4rem;
+	}
+
+	@include bp($point_3) {
+		margin-bottom: 6rem;
+	}
+}
+
+.search_result_arrow {
+	position: absolute;
+	right: 0;
+
+	height: 2.8rem;
+
+
+	color: $blue;
+
+	@include bp($point_2, min) {
+		top: 4.8rem;
+		width: 5.4rem;
+	}
+
+	@include bp($point_3) {
+		top: 100%;
+		width: 2.4rem;
+	}
+}
+
+.search_result_btn {
+	@extend %global_flex_block_row_wrap_center;
+
+	padding-top: 6rem;
+}

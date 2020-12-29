@@ -1,0 +1,200 @@
+//---------------------------------------------saved_object
+
+.saved_object_list {
+
+}
+
+.saved_object_list_item {
+	@include bp($point_2, min) {
+		margin-bottom: 12.4rem;
+	}
+
+	@include bp($point_3) {
+		margin-bottom: 5rem;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+}
+
+.saved_object {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	position: relative;
+
+	@include bp($point_2, min) {
+		padding-right: 14.2rem;
+	}
+
+	@media (min-width: $point_4) and (max-width: $point_3) {
+		padding-right: 4rem;
+	}
+}
+
+.saved_object_w_img {
+	@include bp($point_4, min) {
+		width: 19.4rem;
+		height: 13.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+}
+
+.saved_object_img {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+.saved_object_w_descr {
+
+	@include bp($point_4, min) {
+		flex: 1 1 19.4rem;
+	}
+
+	@include bp($point_2, min) {
+		padding-left: 8.4rem;
+	}
+
+	@media (min-width: $point_4) and (max-width: $point_3) {
+		padding-left: 3rem;
+		margin-left: 3rem;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+	}
+}
+
+.saved_object_heading {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+
+	margin-bottom: 1.8rem;
+}
+
+.saved_object_subtitle {
+	color: $gray_2;
+	font-size: 1.6rem;
+	font-weight: 500;
+
+	&.right_lvl_mod {
+		margin-left: auto;
+	}
+
+}
+
+.saved_object_name {
+	display: block;
+	margin-bottom: 3rem;
+
+	color: $black;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: -.02rem;
+
+	&.doc_mod {
+		position: relative;
+
+		@include bp($point_4 - 1) {
+			padding-left: 2.6rem;
+		}
+
+		&:before {
+			position: absolute;
+			top: 50%;
+
+		
+			width: 1.8rem;
+			height: 2.4rem;
+			margin-top: -1.2rem;
+
+			background: url('../../i/icons/doc.svg') no-repeat center center;
+			background-size: cover;
+
+			content: '';
+
+			@include bp($point_4, min) {
+				left: -3.2rem;
+			}
+
+			@include bp($point_4 - 1) {
+				left: 0;
+			}
+		}
+	}
+
+}
+
+.saved_object_descr {
+	margin-bottom: 3rem;
+
+	color: $black;
+	font-family: $font_1;
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+.saved_object_buttons {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+
+	
+
+	@include bp($point_4 - 1) {
+		flex-direction: column;
+		align-items: flex-start;
+		align-content: flex-start;
+	}
+}
+
+.saved_object_button {
+	@include bp($point_4, min) {
+		margin-right: 3.2rem;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	@include bp($point_4 - 1) {
+		margin-bottom: 2rem;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: $point_4) and (max-width: $point_3) {
+		margin-bottom: 2rem;
+
+	}
+
+}
+
+.saved_object_checkbox {
+	position: absolute;
+
+	width: 2rem;
+	height: 1.8rem;
+
+	color: $blue;
+
+	cursor: pointer;
+
+	@include bp($point_4, min) {
+		top: 4.2rem;
+		right: 0;
+	}
+
+	@include bp($point_4 - 1) {
+		top: 1rem;
+		right: 1rem;
+	}
+}
+//---------------------------------------------saved_object###

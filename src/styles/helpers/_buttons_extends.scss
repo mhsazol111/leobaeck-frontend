@@ -1,0 +1,240 @@
+@mixin st_btn() {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	// white-space: nowrap;
+
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+}
+
+//color extends
+%black_btn_1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $white;
+
+	border: 2px solid $black;
+	background-color: $black;
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background: #fff0;
+		color: $black;
+	}
+
+}
+
+%white_btn_1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $blue;
+
+	border: 2px solid $white;
+	background-color: $white;
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background: darken($white, 10%);
+	}
+
+}
+
+%transparent_btn {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--text);
+
+	border: 2px solid var(--text);
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background: #000;
+		color: $white;
+	}
+
+}
+
+%transparent_btn_2 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $white;
+
+	border: 2px solid $white;
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background: #000;
+		color: $white;
+	}
+
+}
+
+%white_btn_3 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $blue;
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		color: $white;
+
+		path {
+			fill: $blue
+		}
+	}
+}
+
+
+%grey_btn_1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $gray_2;
+
+	border: 2px solid $gray_2;
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		color: $black;
+
+		border: 2px solid $black;
+	}
+
+}
+
+
+%blue_btn_1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $blue;
+
+	border: 2px solid $blue;
+	background-color: transparent;
+
+	transition: .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background: $blue;
+		color: $white;
+	}
+
+}
+
+%blue_btn_2 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $white;
+
+	background-color: $blue;
+
+	transition: .3s ease;
+
+	clip-path: polygon(1.4rem 0, 100% 0, 100% 100%, 0 100%, 0 1.4rem);
+
+	@include st_btn();
+
+	&:hover {
+		background-color: darken($blue, 10%);
+	}
+
+}
+
+//size extends
+%btn_size_1 {
+	min-width: 24.6rem;
+	height: 4.5rem;
+	padding: 0 1.2rem;
+
+	line-height: 4.5rem;
+	font-size: 1.6rem;
+	letter-spacing: .2em;
+}
+
+%btn_size_2 {
+	min-width: 24.6rem;
+	min-height: 5.2rem;
+	padding: 0 1.2rem;
+
+	// line-height: 5.2rem;
+	font-size: 1.6rem;
+	letter-spacing: .2em;
+
+	@include bp($point_3) {
+		font-size: 1.4rem;
+		height: 4.6rem;
+	}
+}
+
+%btn_size_3 {
+	@include bp($point_6, min) {
+		min-width: 38.6rem;
+	}
+
+	min-height: 5.2rem;
+	padding: 0 1.2rem;
+
+	// line-height: 5.2rem;
+	font-size: 1.6rem;
+	letter-spacing: .2em;
+
+
+	@include bp($point_6 - 1) {
+		width: 100%;
+	}
+
+}
+
+%btn_size_4 {
+	height: 7rem;
+	padding: 0 1.2rem;
+
+	line-height: 7rem;
+	font-size: 2rem;
+	letter-spacing: .3em;
+
+
+	@include bp($point_4, min) {
+		min-width: 30rem;
+	}
+
+	@include bp($point_4 - 1) {
+		min-width: 26rem;
+	}
+
+}
+
+%btn_size_5 {
+	min-width: 28rem;
+	height: 7rem;
+	padding: 0 1.2rem;
+
+	line-height: 7rem;
+	font-size: 1.6rem;
+	letter-spacing: .05em;
+}

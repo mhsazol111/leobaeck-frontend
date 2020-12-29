@@ -1,0 +1,319 @@
+// .dashboard_hero_essay {
+// 	position: relative;
+
+// 	padding-left: 3.8rem;
+// 	margin-bottom: 5.6rem;
+
+// 	color: $gray_2;
+// 	font-size: 2rem;
+// 	font-weight: 700;
+
+// 	strong {
+// 		text-decoration: underline;
+// 	}
+// }
+
+
+// .dashboard_hero_essay_icon {
+// 	position: absolute;
+// 	left: 0;
+// 	top: 50%;
+// 	margin-top: -1.2rem;
+
+// 	height: 2.4rem;
+// 	width: 2.2rem;
+
+// 	color: $black;
+// }
+
+// .dashboard_hero_btns_w {
+// 	@extend %global_flex_block_row_wrap_flex-start;
+
+// 	.dashboard_hero_btn {
+// 		margin-right: 3.2rem;
+
+// 		&:last-child {
+// 			margin-right: 0;
+// 		}
+// 	}
+// }
+
+// .img_holder_icons_block {
+// 	@extend %global_flex_block_row_wrap_flex-start_center;
+
+// 	position: absolute;
+// 	bottom: 0;
+// 	right: 4px;
+// 	z-index: 2;
+// }
+
+// .img_holder_icon {
+// 	margin-right: 3rem;
+
+// 	color: $blue;
+
+// 	cursor: pointer;
+
+// 	&:last-child {
+// 		margin-right: 0;
+// 	}
+
+// 	&.rotation_mod {
+// 		height: 3.8rem;
+// 		width: 3.8rem;
+// 	}
+
+// 	&.camera_mod {
+// 		height: 1.8rem;
+// 		width: 2.6rem;
+// 	}
+
+// 	&.sound_mod {
+// 		width: 2.4rem;
+// 		height: 2.2rem
+// 	}
+// }
+
+.dashboard_hero {
+	padding-top: 4rem;
+
+	border-top: 1px solid #d1d1d1;
+}
+
+.dashboard_hero_row {
+	@extend %global_flex_block_row_wrap_flex-start_stretch;
+
+
+	@include bp($point_2, min) {
+		margin-right: -8.6rem;
+	}
+
+
+
+
+	@include bp($point_3) {
+		flex-direction: column-reverse;
+	}
+
+}
+
+.dashboard_hero_col {
+
+	@include bp($point_2, min) {
+		padding-right: 8.6rem;
+	}
+
+	&.decr_mod {
+		max-width: 100%;
+		
+		@include bp($point_2, min) {
+			width: 32%;
+		}
+
+		@extend %global_flex_block_column_nowrap_flex-start;
+
+	}
+
+	&.img_mod {
+		@include bp($point_2, min) {
+			width: 68%;
+		}
+
+
+		@include bp($point_3) {
+			width: 100%;
+
+			margin-bottom: 3.2rem;
+		}
+
+	}
+}
+
+.dashboard_hero_info {
+	width: 100%;
+	margin-bottom: 4rem;
+}
+
+.dashboard_hero_info_top {
+	@extend %global_flex_block_row_wrap_space_between;
+	margin-bottom: 4rem;
+}
+
+.dashboard_hero_like {
+	height: 1.6rem;
+	width: 2rem;
+	margin-left: auto;
+}
+
+
+.dashboard_hero_info_item {
+	position: relative;
+
+	display: block;
+	padding: 2.6rem 0 2.6rem 3.6rem;
+
+	border-bottom: 1px solid $gray_2;
+
+	color: $black;
+
+	&:first-child {
+		border-top: 1px solid $gray_2;
+	}
+
+	&.no_icon_mod {
+		padding-left: 0;
+	}
+
+}
+
+.dashboard_hero_info_descr {
+	margin-bottom: 1rem;
+
+	color: $gray_2;
+	font-size: 1.6rem;
+}
+
+.dashboard_hero_info_icon {
+	@extend %vert_centr;
+
+	position: absolute;
+	left: 0;
+
+	width: 1.8rem;
+	height: 2.4rem;
+
+	&.v2_mod {
+		height: 1.8rem;
+	}
+}
+
+.dashboard_hero_info_title {
+	font-size: 1.8rem;
+	color: $black;
+
+	&.accent_mod {
+		font-weight: 700;
+	}
+}
+
+.dashboard_hero_info_author{
+	font-size: 1.6rem;
+	margin-top: .6rem;
+}  
+
+// .dashboard_hero_tabs {
+// 	@extend %global_flex_block_row_wrap_space_between;
+
+// }
+
+// .dashboard_hero_tabs {
+// 	height: 2rem;
+
+// 	margin-bottom: 3.8rem;
+// }
+
+// .dashboard_hero_tabs_item {
+// 	color: $black;
+// 	font-size: 1.4rem;
+
+// 	opacity: 0.5;
+// 	transition: color .3s;
+// 	cursor: pointer;
+
+// 	&.active_mod,
+// 	&:focus,
+// 	&:hover {
+// 		font-weight: 700;
+
+// 		opacity: 1;
+// 	}
+// }
+
+.dashboard_hero_menu {
+	margin-bottom: 3.8rem;
+}
+
+.dashboard_slider_w {
+	position: relative;
+}
+
+.dashboard_slider_img {
+	position: relative;
+
+	width: 100%;
+
+
+	@include bp($point_2, min) {
+		height: 65.8rem;
+	}
+
+}
+
+.dashboard_slider_icon {
+	position: absolute;
+
+	color: $blue;
+
+	&.resize_mod {
+		bottom: 1.6rem;
+		right: 2.6rem;
+
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	&.info_mod {
+		top: 3.2rem;
+		right: 2.6rem;
+
+		width: 2.4em;
+		height: 2.4rem;
+	}
+
+	&.doc_mod {
+		bottom: 1.6rem;
+		left: 2.4rem;
+
+		width: 2.2rem;
+		height: 2.4rem;
+	}
+}
+
+.dashboard_slider_bottom {
+	min-height: 8.4rem;
+
+	@include bp($point_2, min) {
+		padding: 3.6rem 18.6rem 0;
+	}
+
+	@include bp($point_3) {
+		padding: 3.6rem 0 0;
+	}
+
+}
+
+.dashboard_slider_text {
+	font-size: 1.6rem;
+	color: $black_3;
+}
+
+.dashboard_slider_title {
+	color: $black_3;
+}
+
+.dashboard_slider_descr {
+	padding-top: .6rem;
+	color: $gray_2;
+}
+
+.dashboard_hero_btn {
+	margin-top: auto;
+}
+
+.dashboard_essay_subtitle {
+	margin-bottom: 3rem;
+
+	color: $black;
+	font-size: 1.6rem;
+	font-weight: 700;
+}

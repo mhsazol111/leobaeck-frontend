@@ -1,0 +1,84 @@
+// .nav_block {
+// 	padding-top: 6rem;
+// }
+
+.nav_block_row {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+
+	height: 13.4rem;
+
+	border-bottom: 3px solid $black;
+}
+
+.nav_block_item {
+	position: relative;
+
+	font-family: $font_1;
+
+	cursor: pointer;
+
+	@include bp($point_4, min) {
+		font-size: 3.5rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 2.6rem;
+	}
+
+	font-weight: 500;
+
+	&.prev_mod {
+		@include bp($point_2, min) {
+			padding-left: 14rem;
+		}
+
+		@include bp($point_3) {
+			padding-left: 8rem;
+		}
+	}
+
+
+	&.next_mod {
+		margin-left: auto;
+		padding-left: 2rem;
+
+		@include bp($point_2, min) {
+			padding-right: 14rem;
+		}
+
+
+		@include bp($point_3) {
+			padding-right: 8rem;
+		}
+
+	}
+
+	&:hover, &:focus {
+		color: $blue;
+	}
+}
+
+.nav_block_icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -1.1rem;
+	color: currentColor;
+
+	width: 5.4rem;
+	height: 3.2rem;
+
+	transition: color .3s;
+
+	.nav_block_item.prev_mod & {
+		left: 0;
+	}
+
+	.nav_block_item.next_mod & {
+		right: 0;
+	}
+
+	&:hover,
+	&:focus {
+		color: $blue;
+	}
+}

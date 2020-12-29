@@ -1,0 +1,299 @@
+//-------------------------------------------------------inputs and selects
+%form_field_default {
+	display: block;
+	width: 100%;
+	height: $input_height;
+	padding: $input_offset;
+	font-size: $input_font_size;
+	font-family: $font_1;
+	color: var(--text);
+	// box-shadow: inset 0 0 0 1px $input_border_color;
+	border: none;
+	// border-radius: $input_radius;
+
+	&::-webkit-input-placeholder {
+		color: $input_placeholder_color;
+	}
+
+	&::-moz-placeholder {
+		color: $input_placeholder_color;
+	}
+
+	&:-ms-input-placeholder {
+		color: $input_placeholder_color;
+	}
+
+}
+
+%form_field_default_hover {}
+
+%form_field_default_active {
+	box-shadow: 0 0 0 1px $input_border_color_active;
+}
+
+.form_cell {
+	&.hidden_field {
+		display: none;
+	}
+
+	&.form_cell_v2_mod {
+		margin-bottom: 1.8rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.form_cell_title {
+
+	&.hline_hide_mod {
+		display: none;
+	}
+
+	&.form_v2_mod {
+		color: $gray_2;
+		font-size: 1.4rem;
+
+		margin-bottom: 0.8rem;
+	}
+
+}
+
+.form_field_wrap {
+	position: relative;
+
+	&.form_v1_mod {}
+
+}
+
+.form_field {
+	&.default_mod {
+		@extend %form_field_default !optional;
+
+		// &:focus {
+		// 	@extend %form_field_default_active !optional;
+		// }
+
+		&:hover {
+			@extend %form_field_default_hover !optional;
+		}
+	}
+
+	&.textarea_mod_1 {}
+
+	&.search_mod {
+		padding: 0;
+		margin-top: -3rem;
+		padding-bottom: 1rem;
+
+		height: 8.4rem;
+
+		font-size: 3.5rem;
+		font-weight: 500;
+
+		border-bottom: 1px solid $black;
+		box-shadow: none;
+		background-color: $body_bg;
+
+		&:focus {
+			box-shadow: none;
+		}
+
+	}
+
+	&.account_mod {
+		padding: 0 2rem;
+		height: 5.2rem;
+
+		font-size: 1.6rem;
+		//box-shadow: inset 0 0 0 1px $gray_2;
+		border: 1px solid $gray_2;
+	}
+
+
+	&.v2_mod {
+		padding: 0;
+		height: 4.8rem;
+
+		font-size: 1.4rem;
+		color: $white;
+
+		background: transparent;
+		border-bottom: 1px solid $white;
+		box-shadow: none;
+
+		&::-webkit-input-placeholder {
+			color: rgba($white, .48);
+		}
+
+		&::-moz-placeholder {
+			color: rgba($white, .48);
+		}
+
+		&:-ms-input-placeholder {
+			color: rgba($white, .48);
+		}
+	}
+}
+
+.form_error {
+	font-size: 1.2rem;
+	line-height: 1.9;
+	color: $red;
+}
+
+//---------------------------------------------inputs and selects###
+//---------------------------------------------checkboxes and radio-buttons
+.radio_check {
+	&.check_1_mod,
+	&.radio_1_mod {
+		display: inline-block;
+		cursor:pointer;
+	}
+	&.check_2_mod {
+		@include flex_block(row, wrap, flex-start, center, center);
+
+		width: 100%;
+		min-height: 6.6rem;
+		padding: 2rem;
+
+		cursor:pointer;
+	}
+}
+
+.radio_check_input {
+	display: none;
+	&.check_1_mod,
+	&.check_2_mod,
+	&.radio_1_mod {
+		display: none;
+	}
+}
+
+.radio_check_text {
+	&.check_1_mod {
+		position: relative;
+		display: inline-block;
+
+		padding:0 0 0 5.4rem;
+
+		font-size: 1.6rem;
+		line-height: 1.7;
+
+		color: $white;
+
+		@include bp($point_4 - 1) {
+			padding-left: 4rem;
+		}
+
+		&:before, &:after {
+			position: absolute;
+			top: -1px;
+			left: 0;
+			width: 2.4rem;
+			height: 2.4rem;
+			cursor:pointer;
+		}
+
+		&:before {
+			content: '';
+			border-radius:2px;
+			border: 2px solid $white;
+		}
+
+		&:after {
+			@extend %icon-check:before;
+			@extend %transition_opacity;
+
+			text-align: center;
+			line-height: 2.4rem;
+			opacity: 0;
+			color: $white;
+
+			.radio_check_input:checked + & {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.check_2_mod {
+		position: relative;
+
+		display: inline-block;
+		padding-left: 3.4rem;
+
+		font-size: 1.4rem;
+
+		color: $gray_2;
+		line-height: 1.5;
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			width: 1.8rem;
+			height: 1.8rem;
+			margin-top: -.9rem;
+
+			background-image: url('../i/icons/check-box.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			cursor: pointer;
+			content: '';
+
+			.radio_check_input:checked + & {
+				background-image: url('../i/icons/check-box-checked.svg');
+			}
+		}
+
+		.radio_check_input:hover + & {
+			color: #444;
+		}
+
+		.radio_check_input:checked + & {
+			color: $blue;
+		}
+
+	}
+
+	&.radio_1_mod {
+		position: relative;
+		display: inline-block;
+		padding:0 0 0 3rem;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -1px;
+			left: 0;
+			width: 2rem;
+			height: 2rem;
+			border-radius:100%;
+			border:1px solid black;
+			cursor:pointer;
+		}
+
+		&:after {
+			@extend %transition_opacity;
+
+			content:'';
+			position: absolute;
+			top: 4px;
+			left: 5px;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 100%;
+			background: green;
+			opacity: 0;
+
+			.radio_check_input:checked + & {
+				opacity: 1;
+			}
+		}
+	}
+}
+//---------------------------------------------checkboxes and radio-buttons###

@@ -1,0 +1,189 @@
+.object_item_col {
+	@include bp($point_2, min) {
+		padding-right: 3.2rem;
+	}
+
+	&.text_mod {
+
+		@include bp($point_2, min) {
+			width: 36%;
+
+			max-width: 50rem;
+			margin-right: auto;
+		}
+
+		@include bp($point_3) {
+			width: 100%;
+			margin-bottom: 3.2rem;
+		}
+	}
+
+	&.img_mod {
+		margin: 0;
+		//padding: 0;
+		@include bp($point_2, min) {
+			width: 64%;
+		}
+
+		@include bp($point_3) {
+			width: 100%;
+		}
+	}
+}
+
+.object_img_w {
+	position: relative;
+
+	width: 100%;
+
+	@include bp($point_2, min) {
+		height: 52rem;
+
+		&.top_offset_mod {
+			margin-top: -10rem;
+		}
+	}
+
+}
+
+.object_item_icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 5.2rem;
+	height: 5.2rem;
+}
+
+//---------------------moped_info_table
+
+.moped_info_table {
+	&.offset_mod {
+		margin-bottom: 6.4rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.offset_v1_mod {
+		margin-bottom: 4rem;
+	}
+}
+
+.moped_info_value {
+	width: 100%;
+
+	font-size: 1.6rem;
+	font-weight: 700;
+
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+	color: $black;
+}
+
+.moped_info_item {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+
+	position: relative;
+
+	@include bp($point_7, min) {
+		padding-left: 3.6rem;
+	}
+
+
+	padding-right: 2rem;
+
+	min-height: 5.2rem;
+	border-bottom: 1px solid $gray_2;
+	overflow: hidden;
+
+	color: $black;
+	font-size: 1.6rem;
+	font-weight: 700;
+	//white-space: nowrap;
+
+	&:first-child {
+		border-top: 1px solid $gray_2;
+
+		.moped_info_table.no_border_mod & {
+			border-top: none;
+
+			margin-top: -1.4rem;
+		}
+	}
+
+	span {
+		margin-right: 1.2rem;
+
+		font-weight: 400;
+	}
+
+	.moped_info_table.height_mod & {
+		min-height: 6.2rem;
+	}
+
+}
+
+.mopen_info_type {
+	text-transform: capitalize;
+}
+
+.moped_info_icon {
+	@extend %vert_centr;
+	position: absolute;
+
+	left: 0;
+
+	width: 1.8rem;
+
+	&.origin_mod {
+		height: 2.2rem;
+	}
+
+	&.date_mod {
+		height: 1.8em;
+	}
+
+	&.essays_mod {
+		height: 2.3em;
+	}
+
+
+	@include bp($point_7 - 1) {
+		display: none;
+	}
+
+}
+
+.moped_info_icon_point {
+	@extend %vert_centr;
+
+	position: absolute;
+
+	right: 0;
+
+	width: 0.8rem;
+	height: 1.4rem;
+
+	color: $black;
+	cursor: pointer;
+}
+
+.panel_date_descr {
+	margin-bottom: 2rem;
+
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: $gray_2;
+}
+
+.panel_date {
+	margin-bottom: 2rem;
+
+	font-size: 3.5rem;
+	font-weight: 500;
+	color: $blue;
+}
