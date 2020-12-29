@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import APP_DATA from 'utils/jsonAppData';
 import Lottie from 'react-lottie';
 import * as lottieAnimationData from 'components/Lottie/Logo.json';
+import SphereIframe from './SphereIframe';
 
 const PopupLanding = ({
 	isOpen,
@@ -35,6 +36,7 @@ const PopupLanding = ({
 				<section className="section landing_mod">
 					<div className="section_in">
 						<div className="landing_hero">
+							<SphereIframe />
 							<div className="landing_hero_wrap">
 								<Lottie
 									options={lottieOptions}
